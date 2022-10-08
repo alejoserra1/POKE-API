@@ -3,6 +3,8 @@ const cajaPokemon = document.getElementById("cajaPokemon");
 const inputPokemon = document.getElementById("inputpokemon");
 const submitPoke = document.getElementById("submit-poke");
 const formulario = document.getElementById("form-poke");
+const anteriorPoke = document.getElementById("anterior");
+const siguientePoke = document.getElementById("siguiente");
 
 
 const extraerPokemon = async (input) => {
@@ -33,13 +35,14 @@ return  cajaPokemon.innerHTML = `
 <img class="imagen-pokemon" src="${data.sprites.other.home.front_default}" alt="img-pokemon">
 
 <h2>${data.name} </h2>
-<p class="id-pokemon">#${data.id}</p>
+<p class="id-pokemon">🆔#${data.id}</p>
 
 <div class="titleandphoto">
 
-<h3>Height: ${data.height / 10}MTS</h3>
-<h3>Weight: ${data.weight / 10}kg</h3>
-<h3>Type: ${data.types.map((tipo) => `<span class="${tipo.type.name} poke-tipo">${tipo.type.name}</span>`).join('')}</h3></div></div>`;
+<h3><img class="logo-hp" src="./vida.png" alt="img-hp"> HP: ${data.base_experience}</h3>
+<h3><img class="logo-height" src="./altura.png" alt="img-height">Height: ${data.height / 10}MTS</h3>
+<h3><img class="logo-Weight" src="./peso.png" alt="img-Weight">Weight: ${data.weight / 10}kg</h3>
+<h3><img class="logo-Type" src="./estrella.png" alt="img-Type"> Type: ${data.types.map((tipo) => `<span class="${tipo.type.name} poke-tipo">${tipo.type.name}</span>`).join('')}</h3></div></div>`
 }
 
 
@@ -73,6 +76,17 @@ const ahoraRenderizar = async (input) => {
     
 
     }
+    
+    const anteriorPokemon = () => {
+        const anterior = +inputPokemon.value;
+        inputPokemon.value = (anterior - 1).toString();
+        submitPoke.click();
+    }
+    const siguientePokemon = () => {
+        const siguiente = +inputPokemon.value;
+        inputPokemon.value = (siguiente + 1).toString();
+        submitPoke.click();
+    }
 
 
 
@@ -87,6 +101,9 @@ const ahoraRenderizar = async (input) => {
     }
 
     const init = () => {
+
+        siguiente.addEventListener("click", siguientePokemon);
+        anterior.addEventListener("click", anteriorPokemon);
 
 
         formulario.addEventListener("submit", submitearFormulario);

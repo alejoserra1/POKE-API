@@ -5,6 +5,11 @@
 
 }
 
+body{
+    background: rgb(0,36,30);
+    background: radial-gradient(circle, rgba(0,36,30,0) 0%, rgba(255,255,255,1) 48%, rgba(0,212,255,1) 100%);
+}
+
 .divtitle{
     display: flex;
     justify-content: center;
@@ -43,7 +48,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 10px solid rgb(177, 177, 134);
+    border: 7px solid rgb(185, 185, 147);
     padding: 5px;
 }
 
@@ -110,6 +115,7 @@
     padding: 20px;
     max-width: 1300;
     gap: 20px;
+
 }
 
 .card-conteiner h2{
@@ -124,6 +130,7 @@
     flex-direction: column;
     text-transform: uppercase;
     text-align: center;
+    
 }
 
 .titleandphoto{
@@ -138,12 +145,13 @@
     border-radius: 10px;
     gap: 10px;
     padding: 5px;
+    
 }
 
 .id-pokemon{
-    background-color: rgb(219, 177, 177);
-    color: blanchedalmond;
-    font-size: 16px;
+    background-color: rgb(213, 248, 216);
+    color: rgb(14, 9, 2);
+    font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px;
     border-radius: 4px;
@@ -152,7 +160,8 @@
 .imagen-pokemon{
     width: 150px;
     height: 150px;
-    background-color: antiquewhite;
+    background-color: rgb(197, 232, 255);
+    border-radius: 50px;
 }
 
 
@@ -163,4 +172,32 @@
     background-color: rgb(255, 0, 0);
     border-radius: 10px;
     font-size: 25px;
+    padding: 10px;
+}
+
+
+.imagen-pokemon-triste{
+    height: 200px;
+    width: 200px;
+}
+
+.div-flechas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.div-flechas button{
+    cursor: pointer;
+    border: 3px solid rgb(185, 185, 147);
+    background-color: rgb(255, 255, 0);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.div-flechas img{
+    height: 50px;
+    width: 50px;
 }
